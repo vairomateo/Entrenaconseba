@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121214;
+  color: #e1e1e6;
+  line-height: 1.6;
+}
+
+section,
+.section-container {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #a8a8b3;
+  }
+}
+
+.section-title-accent {
+  text-align: center;
+  margin-bottom: 35px;
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-white);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  .accent-bar {
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+  }
+
+  &.align-left {
+    text-align: left;
+
+    .accent-bar {
+      margin: 8px 0 0 0;
+    }
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #FF6B00;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #D95B00;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #FF6B00;
+  border: 2px solid #FF6B00;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #FF6B00;
+    color: #ffffff;
+  }
+}
+
+.center-btn {
+  text-align: center;
+}
+
+/* ANIMACIÓN SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,111 @@
+/* TESTIMONIOS GENERALES */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+
+  .testimoni-card {
+    background-color: #202024;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #29292e;
+
+    .stars {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #e1e1e6;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .author {
+      color: #FF6B00;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* RESEÑAS CON AVATAR */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background-color: #121317;
+  border: 1px solid #22242c;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.review-stars {
+  color: #FF6B00;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.review-text {
+  color: #d1d5db;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 22px 0;
+  flex-grow: 1;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #22242c;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B00 0%, #D95B00 100%);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.user-info {
+  h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+  }
+
+  .user-tag {
+    color: #9ca3af;
+    font-size: 0.78rem;
+    display: block;
+  }
+}

@@ -1,0 +1,269 @@
+/* CARACTERÍSTICAS DE SERVICIOS */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+  .feature-card {
+    background-color: #202024;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #FF6B00;
+
+    h3 {
+      color: #ffffff;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: #a8a8b3;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* PASTILLAS DE FILTRADO (PILLS) */
+.filter-pills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  .pill {
+    background-color: #1e1f25;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #9ca3af;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+
+    &:hover {
+      background-color: #2a2b33;
+      color: #ffffff;
+    }
+
+    &.active {
+      background-color: var(--color-green);
+      color: #000000;
+      font-weight: 800;
+      border-color: var(--color-green);
+      box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+    }
+  }
+}
+
+/* GRID Y TARJETAS DE EJERCICIOS */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+
+  .ex-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+      border-color: rgba(255, 107, 0, 0.4);
+      transform: translateY(-4px);
+    }
+  }
+
+  .ex-top-banner {
+    background-color: #1b2436;
+    color: #60a5fa;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+
+  .ex-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-white);
+    margin: 0 0 10px 0;
+    line-height: 1.25;
+  }
+
+  .ex-desc {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin: 0 0 18px 0;
+  }
+
+  .ex-tag-muscle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #1c1e26;
+    color: #d1d5db;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+    width: fit-content;
+
+    i {
+      color: var(--color-green);
+    }
+  }
+
+  .btn-card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background-color: var(--color-green);
+      color: #000000;
+      box-shadow: 0 4px 20px rgba(255, 107, 0, 0.25);
+    }
+  }
+}
+
+/* BUSCADOR DE ALUMNOS Y RUTINAS */
+.search-card {
+  background-color: #121317;
+  border: 1px solid #22242c;
+  padding: 35px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-desc {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+
+  input {
+    flex: 1;
+    background-color: #0a0a0c;
+    border: 1px solid #22242c;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: none;
+      border-color: #FF6B00;
+    }
+  }
+}
+
+.routine-output {
+  margin-top: 25px;
+  background-color: #0a0a0c;
+  border: 1px solid #22242c;
+  border-left: 4px solid #FF6B00;
+  padding: 20px;
+  border-radius: 8px;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  h4 {
+    color: #FF6B00;
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.plan-badge {
+  background-color: rgba(255, 107, 0, 0.15);
+  color: #FF6B00;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.day-block {
+  margin-top: 15px;
+
+  .day-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 0 8px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      color: #9ca3af;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      i {
+        color: #FF6B00;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+/* ESTADOS Y BOTÓN DE VER MÁS EJERCICIOS */
+.ex-card.is-hidden {
+  display: none !important;
+}
+
+.btn-load-more-container {
+  text-align: center;
+  margin-top: 40px;
+}

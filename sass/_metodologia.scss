@@ -1,0 +1,35 @@
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+
+    .step-card {
+        background-color: $bg-card;
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid $border-color;
+        transition: $transition;
+
+        &:hover {
+            border-color: $color-orange;
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: $color-white;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: $color-text-muted;
+            font-size: 0.95rem;
+        }
+    }
+}

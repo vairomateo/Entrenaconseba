@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entrenaconseba | Entrenamiento Personalizado</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">entrenaconseba<span>.</span></a>
+            <nav class="nav-menu">
+                <a href="#metodos">Métodos de Trabajo</a>
+                <a href="#ejercicios">Ejercicios</a>
+                <a href="#alumnos">Alumnos</a>
+                <a href="#planes">Planes</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#reseñas">Reseñas</a>
+            </nav>
+            <a href="https://wa.me/5491100000000?text=Hola%20Seba,%20quiero%20consultar%20por%20un%20plan" target="_blank" class="nav-cta">
+                <i class="fa-brands fa-whatsapp"></i> CONTACTAR
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO ANIMADO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="badge-animated">
+                <span class="pulse-dot"></span> DISPONIBILIDAD DE CUPOS LIMITADA
+            </div>
+            <h1>CONSTRUÍ TU <span class="highlight">MEJOR VERSIÓN</span></h1>
+            <p>Entrenamiento personalizado para ganar masa muscular, perder grasa y mejorar tu rendimiento físico con un plan 100% a tu medida.</p>
+            
+            <div class="hero-actions">
+                <a href="#planes" class="btn-primary">
+                    <i class="fa-solid fa-fire"></i> VER PLANES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTODOS DE TRABAJO -->
+    <section class="section-container" id="metodos">
+        <div class="section-title">
+            <h2>MÉTODOS DE TRABAJO</h2>
+            <p>Paso a paso hacia tus objetivos sin improvisar</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <span class="step-num">01</span>
+                <h3>Evaluación Inicial</h3>
+                <p>Analizamos postura, historial físico y metas reales.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">02</span>
+                <h3>Plan Diagnóstico</h3>
+                <p>Armado de rutina con cargas y repeticiones a tu nivel.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">03</span>
+                <h3>Técnica y Ejecución</h3>
+                <p>Corrección detallada para evitar lesiones y maximizar estímulo.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">04</span>
+                <h3>Progreso Continuo</h3>
+                <p>Ajuste de cargas semanal según tus respuestas físicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EJERCICIOS -->
+<section class="section-container" id="ejercicios">
+    <!-- Encabezado con Barrita Verde -->
+    <div class="section-title-accent reveal">
+        <h2>EJERCICIOS</h2>
+        <div class="accent-bar"></div>
+    </div>
+
+    <!-- Filtros tipo Pastilla (Pills) -->
+    <div class="filter-pills reveal">
+        <button class="pill active" data-cat="todos">Todos</button>
+        <button class="pill" data-cat="espalda">Espalda</button>
+        <button class="pill" data-cat="pecho">Pecho</button>
+        <button class="pill" data-cat="biceps">Bíceps</button>
+        <button class="pill" data-cat="triceps">Tríceps</button>
+        <button class="pill" data-cat="piernas">Piernas</button>
+        <button class="pill" data-cat="core">Core</button>
+    </div>
+
+    <!-- Grid de Tarjetas -->
+    <div class="exercise-grid" id="exercise-grid">
+        <!-- Inyectado dinámicamente por JS -->
+    </div>
+
+    <!-- Botón Ver Más / Ver Menos -->
+    <div class="btn-load-more-container reveal">
+        <button id="btnToggleExercises" class="btn-primary">Ver más ejercicios</button>
+    </div>
+</section>
+
+    <!-- ALUMNOS (Buscador JSON) -->
+    <section class="section-container" id="alumnos">
+    <div class="search-card">
+        <div class="section-title-accent">
+            <h2>ÁREA DE ALUMNOS</h2>
+            <div class="accent-bar"></div>
+        </div>
+        <p class="search-desc">Ingresá tu nombre para consultar tu rutina semanal activa</p>
+
+        <div class="search-box">
+            <input type="text" id="student-name-input" placeholder="Ingresá tu ID o DNI (ej: 1001)...">
+            <button id="search-btn" class="btn-primary">
+                <i class="fa-solid fa-magnifying-glass"></i> BUSCAR
+            </button>
+        </div>
+
+        <div id="routine-output" class="routine-output hidden"></div>
+    </div>
+</section>
+
+    <!-- SECCIÓN PLANES -->
+<section class="section-container" id="planes">
+    <!-- Encabezado con Barrita Verde -->
+    <div class="section-title-accent">
+        <h2>PLANES DISPONIBLES</h2>
+        <div class="accent-bar"></div>
+    </div>
+    <p class="section-subtitle">Elegí la modalidad que mejor se adapte a tus objetivos</p>
+
+    <div class="planes-grid">
+        <!-- PLAN 1: ASESORÍA ONLINE -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <span class="plan-type">100% DISTANCIA</span>
+                <h3 class="plan-title">ASESORÍA ONLINE</h3>
+            </div>
+            
+            <div class="plan-price">
+                <span class="price">$60.000</span>
+                <span class="period">/ mes</span>
+            </div>
+
+            <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i> Rutina 100% personalizada</li>
+                <li><i class="fa-solid fa-circle-check"></i> Seguimiento semanal por WhatsApp</li>
+                <li><i class="fa-solid fa-circle-check"></i> Corrección técnica por video</li>
+                <li><i class="fa-solid fa-circle-check"></i> Acceso a la plataforma de alumnos</li>
+            </ul>
+
+            <!-- Opción A: Link directo a Mercado Pago -->
+            <!-- Opción B: Link a WhatsApp con mensaje automático -->
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20sumarme%20al%20plan%20de%20Asesor%C3%ADa%20Online" 
+               target="_blank" 
+               class="btn-plan btn-outline">
+                PAGAR Y EMPEZAR
+            </a>
+        </div>
+
+        <!-- PLAN 2: PRESENCIAL (DESTACADO) -->
+        <div class="plan-card featured">
+            <div class="badge-recommended">RECOMENDADO</div>
+            
+            <div class="plan-header">
+                <span class="plan-type">PERSONALIZADO</span>
+                <h3 class="plan-title">PRESENCIAL 1 A 1</h3>
+            </div>
+
+            <div class="plan-price">
+                <span class="price">$15.000</span>
+                <span class="period">/ clase</span>
+            </div>
+
+            <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i> Entrenamiento guiado en persona</li>
+                <li><i class="fa-solid fa-circle-check"></i> Corrección postural inmediata</li>
+                <li><i class="fa-solid fa-circle-check"></i> Planificación y acceso a la web</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ajustes de carga en tiempo real</li>
+            </ul>
+
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20agendar%20una%20clase%20Presencial%201%20a%201" 
+               target="_blank" 
+               class="btn-plan btn-filled">
+                <i class="fa-brands fa-whatsapp"></i> AGENDAR CLASE
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+<section class="section-container" id="sobre-mi">
+    <div class="about-grid">
+        
+        <!-- Tarjeta Visual / Foto -->
+        <div class="about-image-card">
+            <div class="about-image-wrapper">
+                <!-- Reemplazá la URL por una foto tuya entrenando o sonriendo -->
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" alt="Seba Entrenador">
+                <div class="about-badge-experience">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>Entrenamiento con propósito</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Cálido y Llegadero -->
+        <div class="about-content">
+            <div class="section-title-accent align-left">
+                <h2>MÁS QUE UN ENTRENAMIENTO</h2>
+                <div class="accent-bar"></div>
+            </div>
+
+            <h3 class="about-headline">Hola, soy Seba 👋</h3>
+
+            <p class="about-text">
+                Sé que empezar o retomar el gimnasio muchas veces da pereza o genera dudas. Por eso, mi enfoque no se trata de exigirte hasta el agotamiento ni de darte rutinas genéricas calcadas para todo el mundo.
+            </p>
+
+            <p class="about-text">
+                Mi meta es <strong>acompañarte a tu propio ritmo</strong>. Me tomo el tiempo de escuchar tus objetivos, corregir cada detalle técnico para cuidar tus articulaciones y armar un plan que realmente disfrutes y puedas sostener en el tiempo.
+            </p>
+
+            <!-- Pilares del entrenamiento -->
+            <div class="about-pillars">
+                <div class="pillar-item">
+                    <div class="pillar-icon"><i class="fa-solid fa-comments"></i></div>
+                    <div>
+                        <h4>Escucha activa</h4>
+                        <p>Adaptamos la rutina si tuviste un mal día o si estás con poca energía.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                        <h4>Técnica antes que peso</h4>
+                        <p>Priorizamos movernos bien para entrenar seguros y sin lesiones.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <div>
+                        <h4>Hábitos reales</h4>
+                        <p>Sin dietas extremas ni fórmulas mágicas; resultados progresivos y duraderos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote class="about-quote">
+                "El mejor entrenamiento no es el más duro, sino el que podés mantener con una sonrisa semana a semana."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+    <!-- SECCIÓN RESEÑAS / TESTIMONIOS -->
+<section class="section-container" id="resenas">
+    <div class="section-title-accent">
+        <h2>EXPERIENCIAS DE ALUMNOS</h2>
+        <div class="accent-bar"></div>
+    </div>
+    <p class="section-subtitle">Lo que dicen quienes ya están entrenando con el equipo</p>
+
+    <div class="reviews-grid">
+        
+        <!-- RESEÑA 1 -->
+        <div class="review-card">
+            <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+                "Arranqué sin tener idea de cómo usar las máquinas y con bastante vergüenza. Seba me tuvo una paciencia increíble, me corrigió la postura y hoy ir al gimnasio se volvió mi momento de desconectar."
+            </p>
+            <div class="review-user">
+                <div class="user-avatar">MV</div>
+                <div class="user-info">
+                    <h4>Mateo Vairo</h4>
+                    <span class="user-tag">Asesoría Online • 6 meses</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESEÑA 2 -->
+        <div class="review-card">
+            <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+                "Lo que más valoro es la flexibilidad. Entre el laburo y la facu tenía cero tiempo, pero adaptamos los días y ejercicios. Chau dolores de espalda y gané muchísima fuerza."
+            </p>
+            <div class="review-user">
+                <div class="user-avatar">LR</div>
+                <div class="user-info">
+                    <h4>Lucas Rodríguez</h4>
+                    <span class="user-tag">Presencial 1 a 1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESEÑA 3 -->
+        <div class="review-card">
+            <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+                "Cero presión, mucha buena onda y seguimiento de verdad. Le mandás un video con dudas sobre la técnica y te responde al toque explicando cada detalle para no lesionarte."
+            </p>
+            <div class="review-user">
+                <div class="user-avatar">CS</div>
+                <div class="user-info">
+                    <h4>Camila Santillán</h4>
+                    <span class="user-tag">Asesoría Online</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- FOOTER / PIE DE PÁGINA -->
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <!-- Columna 1: Marca y Filosofía -->
+        <div class="footer-col brand-col">
+            <h3 class="footer-logo">SEBA <span>ENTRENADOR</span></h3>
+            <p class="footer-desc">
+                Entrenamiento personalizado adaptado a tus tiempos y objetivos. Priorizando la técnica, la salud y los hábitos sostenibles en el tiempo.
+            </p>
+            <div class="footer-socials">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/5491112345678" target="_blank" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto:contacto@sebaentrenador.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna 2: Navegación Rápida -->
+        <div class="footer-col">
+            <h4 class="footer-title">Navegación</h4>
+            <ul class="footer-links">
+                <li><a href="#ejercicios"><i class="fa-solid fa-angle-right"></i> Ejercicios</a></li>
+                <li><a href="#alumnos"><i class="fa-solid fa-angle-right"></i> Área de Alumnos</a></li>
+                <li><a href="#sobre-mi"><i class="fa-solid fa-angle-right"></i> Sobre mí</a></li>
+                <li><a href="#resenas"><i class="fa-solid fa-angle-right"></i> Reseñas</a></li>
+                <li><a href="#planes"><i class="fa-solid fa-angle-right"></i> Planes</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna 3: Contacto y Disponibilidad -->
+        <div class="footer-col">
+            <h4 class="footer-title">Atención</h4>
+            <ul class="footer-contact-info">
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Presencial / Asesoría Online</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Lun a Vie: 07:00 a 21:00 hs</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span>Soporte activo por WhatsApp</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Barra Inferior Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Seba Entrenador. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

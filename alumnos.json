@@ -1,0 +1,95 @@
+[
+  {
+    "id": "1001",
+    "nombre": "Mateo Vairo",
+    "plan": "Rendimiento (resistencia y control)",
+    "rutina": [
+      {
+        "dia": "Día 1 (Espalda + Bíceps)",
+        "ejercicios": [
+          "Dominadas → 4×12 (control de bajada)",
+          "Remo con barra → 4×15 (peso moderado, ritmo constante)",
+          "Curl alterno con mancuernas → 3×15 (supinación completa)"
+        ]
+      },
+      {
+        "dia": "Día 2 (Pecho + Tríceps)",
+        "ejercicios": [
+          "Press inclinado con mancuernas → 4×12",
+          "Flexiones diamante → 3×20",
+          "Extensión en cuerda → 3×15 (tensión constante)"
+        ]
+      },
+      {
+        "dia": "Día 3 (Piernas + Core)",
+        "ejercicios": [
+          "Sentadilla frontal → 4×12",
+          "Zancadas → 3×15 por pierna",
+          "Russian Twist → 3×20 por lado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1002",
+    "nombre": "Seba Bago",
+    "plan": "Hipertrofia (crecimiento muscular)",
+    "rutina": [
+      {
+        "dia": "Día 1 (Espalda + Bíceps)",
+        "ejercicios": [
+          "Peso muerto → 4×8 (carga progresiva)",
+          "Face Pull → 3×12 (contracción máxima)",
+          "Curl en predicador → 3×10 (aislamiento)"
+        ]
+      },
+      {
+        "dia": "Día 2 (Pecho + Tríceps)",
+        "ejercicios": [
+          "Press de banca con barra → 4×8",
+          "Aperturas con mancuernas → 3×12",
+          "Press francés con barra → 3×10"
+        ]
+      },
+      {
+        "dia": "Día 3 (Piernas + Core)",
+        "ejercicios": [
+          "Sentadilla con barra → 4×8",
+          "Hip Thrust → 4×12",
+          "Hollow Hold → 3×30 seg"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1003",
+    "nombre": "Juan Vairo",
+    "plan": "Fuerza (máxima potencia)",
+    "rutina": [
+      {
+        "dia": "Día 1 (Espalda + Bíceps)",
+        "ejercicios": [
+          "Dominadas → 4×12 (control de bajada)",
+          "Remo con barra → 4×15 (peso moderado, ritmo constante)",
+          "Curl alterno con mancuernas → 3×15 (supinación completa)"
+        ]
+      },
+      {
+        "dia": "Día 2 (Pecho + Tríceps)",
+        "ejercicios": [
+          "Press inclinado con mancuernas → 4×12",
+          "Flexiones diamante → 3×20",
+          "Extensión en cuerda → 3×15 (tensión constante)"
+        ]
+      },
+      {
+        "dia": "Día 3 (Piernas + Core)",
+        "ejercicios": [
+          "Sentadilla frontal → 4×12",
+          "Zancadas → 3×15 por pierna",
+          "Russian Twist → 3×20 por lado"
+        ]
+      }
+    ]
+  }
+]
