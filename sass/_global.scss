@@ -114,6 +114,59 @@ section,
   text-align: center;
 }
 
+/* BUSCADOR RESPONSIVE DE ALUMNOS */
+.search-card {
+  background-color: #121317;
+  border: 1px solid #22242c;
+  padding: 35px 20px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .search-desc {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .search-box {
+    display: flex;
+    gap: 10px;
+
+    input {
+      flex: 1;
+      min-width: 0; /* Evita que el input sobrepase el ancho de pantalla en celulares */
+      background-color: #0a0a0c;
+      border: 1px solid #22242c;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+
+      &:focus {
+        outline: none;
+        border-color: #FF6B00;
+      }
+    }
+
+    button,
+    .btn-primary {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+
+      button,
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  }
+}
+
 /* ANIMACIÓN SCROLL REVEAL */
 .reveal {
   opacity: 0;

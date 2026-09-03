@@ -749,6 +749,7 @@ section {
 
 .search-box input {
   flex: 1;
+  min-width: 0;
   background-color: #0a0a0c;
   border: 1px solid #22242c;
   color: #ffffff;
