@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vairomateo.github.io/Entrenaconseba/

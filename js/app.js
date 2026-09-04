@@ -59,13 +59,6 @@ const exercises = [
         videoUrl: "https://www.youtube.com/watch?v=Ejemplo2"
     },
     {
-        title: "Press de Banca Plano",
-        category: "pecho",
-        muscle: "Pectoral Mayor & Tríceps",
-        desc: "Mantené los pies clavados en el suelo, retracción escapular constante y controlá la bajada hasta el esternón.",
-        videoUrl: "https://www.youtube.com/watch?v=Ejemplo2"
-    },
-    {
         title: "Press declinado",
         category: "pecho",
         muscle: "Pectoral inferiors",
@@ -259,6 +252,7 @@ const exercises = [
 // Variables de estado
 const INITIAL_SHOW = 6;
 let currentCategory = 'todos';
+let currentSearchTerm = '';
 let isExpanded = false;
 
 // ==========================================
@@ -295,12 +289,20 @@ function renderExercises() {
     grid.innerHTML = '';
 
     // Filtrar por categoría
-    const filtered = currentCategory === 'todos' 
+    let filtered = currentCategory === 'todos' 
         ? exercises 
         : exercises.filter(e => e.category === currentCategory);
 
+    // Filtrar por texto libre (título o músculo)
+    if (currentSearchTerm) {
+        const term = cleanText(currentSearchTerm);
+        filtered = filtered.filter(e =>
+            cleanText(e.title).includes(term) || cleanText(e.muscle).includes(term)
+        );
+    }
+
     if (filtered.length === 0) {
-        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #9ca3af;">No hay ejercicios en esta categoría.</p>`;
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #9ca3af;">No encontramos ejercicios que coincidan con tu búsqueda.</p>`;
         if (toggleBtn) toggleBtn.parentElement.style.display = 'none';
         return;
     }
@@ -361,6 +363,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render inicial
     renderExercises();
 
+    // Evento de búsqueda por texto libre
+    const searchInput = document.getElementById('exercise-search-input');
+    if (searchInput) {
+        let debounceTimer;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentSearchTerm = e.target.value;
+                isExpanded = false;
+                renderExercises();
+            }, 200);
+        });
+    }
+
     // Evento de clicks en filtros (Pills)
     document.querySelectorAll('.pill').forEach(pill => {
         pill.addEventListener('click', (e) => {
@@ -407,9 +423,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Muestra estado de carga (spinner) mientras se resuelve la búsqueda
+        routineOutput.classList.remove('hidden');
+        routineOutput.innerHTML = `
+            <div class="loading-state">
+                <span class="spinner"></span>
+                <span>Buscando tu rutina...</span>
+            </div>
+        `;
+        if (searchBtn) searchBtn.disabled = true;
+
         try {
-            const response = await fetch('./alumnos.json');
-            
+            // Se asegura un mínimo de tiempo visible del spinner, aunque la
+            // respuesta sea instantánea (evita el "parpadeo" del loading state)
+            const [response] = await Promise.all([
+                fetch('./alumnos.json'),
+                new Promise(resolve => setTimeout(resolve, 400))
+            ]);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -464,6 +495,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     Si estás abriendo la página localmente con doble clic, recordá usar <b>Live Server</b> en VS Code.
                 </p>
             `;
+        } finally {
+            if (searchBtn) searchBtn.disabled = false;
         }
     }
 

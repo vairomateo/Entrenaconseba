@@ -91,6 +91,17 @@ section,
     background-color: #D95B00;
     transform: translateY(-2px);
   }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+
+    &:hover {
+      background-color: #FF6B00;
+      transform: none;
+    }
+  }
 }
 
 .btn-secondary {
@@ -118,7 +129,7 @@ section,
 .search-card {
   background-color: #121317;
   border: 1px solid #22242c;
-  padding: 35px 20px;
+  padding: 30px 20px;
   border-radius: 16px;
   max-width: 600px;
   margin: 0 auto;
@@ -136,13 +147,15 @@ section,
 
     input {
       flex: 1;
-      min-width: 0; /* Evita que el input sobrepase el ancho de pantalla en celulares */
+      min-width: 0;
+      height: 48px; /* Altura fija idéntica al botón */
       background-color: #0a0a0c;
       border: 1px solid #22242c;
       color: #ffffff;
-      padding: 12px 18px;
+      padding: 0 16px;
       border-radius: 8px;
       font-size: 0.95rem;
+      box-sizing: border-box;
 
       &:focus {
         outline: none;
@@ -152,19 +165,52 @@ section,
 
     button,
     .btn-primary {
+      height: 48px; /* Misma altura que el input */
+      padding: 0 20px;
+      display: inline-flex; /* Alinea la lupa y el texto horizontalmente */
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       flex-shrink: 0;
       white-space: nowrap;
+      box-sizing: border-box;
     }
 
-    @media (max-width: 480px) {
+    /* En celulares apila la caja y el botón uno abajo del otro */
+    @media (max-width: 600px) {
       flex-direction: column;
 
+      input,
       button,
       .btn-primary {
         width: 100%;
       }
     }
   }
+}
+
+/* ESTADO DE CARGA DEL BUSCADOR DE ALUMNOS */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: var(--color-green);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ANIMACIÓN SCROLL REVEAL */
