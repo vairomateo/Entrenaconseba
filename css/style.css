@@ -62,7 +62,7 @@ section,
 .section-title-accent .accent-bar {
   width: 50px;
   height: 4px;
-  background-color: var(--color-orange);
+  background-color: var(--color-primary); /* Ahora usa #FF6B00 */
   margin: 10px auto 0;
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
@@ -204,7 +204,7 @@ section,
   width: 20px;
   height: 20px;
   border: 3px solid rgba(255, 255, 255, 0.12);
-  border-top-color: var(--color-orange);
+  border-top-color: var(--color-green);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
@@ -250,6 +250,11 @@ section,
   text-decoration: none;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
+}
+.navbar .nav-container .logo img {
+  height: 45px; /* ajustalo a 35, 40 o 50 según cómo quede */
+  width: auto;
+  display: block;
 }
 .navbar .nav-container .nav-menu {
   display: flex;
@@ -464,7 +469,8 @@ body.nav-locked {
   width: 100%;
   max-width: 400px;
   border-radius: 16px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 2px solid #29292e;
 }
@@ -531,7 +537,8 @@ body.nav-locked {
   width: 100%;
   max-width: 320px;
   border-radius: 12px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about-container .about-text {
   flex: 2;
@@ -585,7 +592,8 @@ body.nav-locked {
   width: 100%;
   height: 100%;
   max-height: 480px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   filter: brightness(0.9) contrast(1.05);
   transition: transform 0.5s ease;
@@ -740,12 +748,15 @@ body.nav-locked {
   outline: none;
   transition: all 0.25s ease;
 }
+.exercise-search input::-moz-placeholder {
+  color: #6b6b76;
+}
 .exercise-search input::placeholder {
   color: #6b6b76;
 }
 .exercise-search input:focus {
-  border-color: var(--color-orange);
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
 }
 
 /* PASTILLAS DE FILTRADO (PILLS) */
@@ -773,10 +784,10 @@ body.nav-locked {
   color: #ffffff;
 }
 .filter-pills .pill.active {
-  background-color: var(--color-orange);
+  background-color: var(--color-primary);
   color: #000000;
   font-weight: 800;
-  border-color: var(--color-orange);
+  border-color: var(--color-primary);
   box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
 }
 
@@ -801,8 +812,8 @@ body.nav-locked {
   transform: translateY(-4px);
 }
 .exercise-grid .ex-top-banner {
-  background-color: #1b2436;
-  color: #60a5fa;
+  background-color: rgba(255, 107, 0, 0.15);
+  color: #FF6B00;
   font-size: 0.75rem;
   font-weight: 800;
   padding: 6px 14px;
@@ -810,6 +821,7 @@ body.nav-locked {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 16px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .exercise-grid .ex-title {
@@ -836,10 +848,11 @@ body.nav-locked {
   padding: 6px 12px;
   border-radius: 6px;
   margin-bottom: 22px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .exercise-grid .ex-tag-muscle i {
-  color: var(--color-orange);
+  color: var(--color-primary);
 }
 .exercise-grid .btn-card-cta {
   display: flex;
@@ -848,8 +861,8 @@ body.nav-locked {
   gap: 8px;
   width: 100%;
   background-color: transparent;
-  border: 1px solid var(--color-orange);
-  color: var(--color-orange);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
   padding: 12px;
   border-radius: 8px;
   text-decoration: none;
@@ -860,7 +873,7 @@ body.nav-locked {
   transition: all 0.25s ease;
 }
 .exercise-grid .btn-card-cta:hover {
-  background-color: var(--color-orange);
+  background-color: var(--color-primary);
   color: #000000;
   box-shadow: 0 4px 20px rgba(255, 107, 0, 0.25);
 }
@@ -980,7 +993,7 @@ body.nav-locked {
   margin-bottom: 30px;
 }
 .objetivos-grid .obj-card {
-  background-color: #202024;
+  background-color: #121317;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
@@ -997,7 +1010,7 @@ body.nav-locked {
   margin-bottom: 10px;
 }
 .objetivos-grid .obj-card p {
-  color: #a8a8b3;
+  color: #9ca3af;
   font-size: 0.9rem;
 }
 
@@ -1032,7 +1045,7 @@ body.nav-locked {
   font-size: 1.2rem;
 }
 .steps-grid .step-card p {
-  color: #a8a8b3;
+  color: #9ca3af;
   font-size: 0.95rem;
 }
 
@@ -1122,9 +1135,9 @@ body.nav-locked {
 /* GRID DE PLANES DETALLADOS */
 .planes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1133,7 +1146,7 @@ body.nav-locked {
   background-color: #121317;
   border: 1px solid #22242c;
   border-radius: 16px;
-  padding: 35px 28px;
+  padding: 30px 22px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1169,7 +1182,7 @@ body.nav-locked {
 .plan-type {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #60a5fa;
+  color: #FF6B00;
   letter-spacing: 1px;
   display: block;
   margin-bottom: 5px;
@@ -1190,6 +1203,22 @@ body.nav-locked {
   margin-bottom: 25px;
   padding-bottom: 20px;
   border-bottom: 1px solid #22242c;
+}
+.plan-price .price-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.plan-price .old-price {
+  text-decoration: line-through;
+  color: #6b6b76;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.plan-price .price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
 }
 .plan-price .price {
   font-family: "Montserrat", sans-serif;
@@ -1398,6 +1427,15 @@ body.nav-locked {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #22242c;
+  color: #a8a8b3;
+  font-size: 0.85rem;
+}
+
 /* FOOTER */
 .main-footer {
   background-color: #0a0a0c;
@@ -1416,7 +1454,7 @@ body.nav-locked {
 }
 
 .footer-logo {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
   font-weight: 900;
   color: #ffffff;
@@ -1473,7 +1511,7 @@ body.nav-locked {
 }
 
 .footer-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1544,4 +1582,4 @@ body.nav-locked {
   color: #6b7280;
   font-size: 0.8rem;
   margin: 0;
-}
+}/*# sourceMappingURL=style.css.map */

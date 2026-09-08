@@ -1,8 +1,10 @@
+@use 'variables' as *;
+
 footer {
     text-align: center;
     padding: 40px 20px;
-    border-top: 1px solid $border-color;
-    color: $color-text-muted;
+    border-top: 1px solid #22242c;
+    color: $text-muted;
     font-size: 0.85rem;
 }
 

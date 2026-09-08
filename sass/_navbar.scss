@@ -24,6 +24,12 @@
       letter-spacing: 0.5px;
     }
 
+    .logo img {
+    height: 45px; /* ajustalo a 35, 40 o 50 según cómo quede */
+    width: auto;
+    display: block;
+}
+
     .nav-menu {
       display: flex;
       gap: 25px;

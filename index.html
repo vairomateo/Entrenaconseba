@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="entrenaconseba">
     <meta property="og:title" content="entrenaconseba | Entrenamiento Personalizado">
     <meta property="og:description" content="Rutinas 100% a tu medida, seguimiento semanal y corrección técnica. Entrená presencial o a distancia con acompañamiento real.">
-    <meta property="og:image" content="https://entrenaconseba.com/imagenes/hero-entrenaconseba.jpeg">
+    <meta property="og:image" content="./imagenes/favicom-entrenaconseba.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="665">
 
@@ -30,8 +30,8 @@
     <meta name="twitter:image" content="https://entrenaconseba.com/imagenes/hero-entrenaconseba.jpeg">
 
     <!-- Favicons -->
-    <link rel="icon" href="./imagenes/favicom-entrrenaconseba.jpeg" sizes="any">
-    <link rel="apple-touch-icon" href="./imagenes/favicom-entrrenaconseba.jpeg">
+    <link rel="icon" href="./imagenes/favicom-entrenaconseba.png" sizes="any">
+    <link rel="apple-touch-icon" href="./imagenes/apple-touch-icon.png">
     <meta name="theme-color" content="#121214">
 
     <!-- Google Fonts & FontAwesome -->
@@ -47,7 +47,9 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">entrenaconseba<span>.</span></a>
+            <a href="#" class="logo">
+                <img src="./imagenes/favicom-entrenaconseba.png" alt="EntrenaConSeba">
+            </a>
             <nav class="nav-menu" id="navMenu">
                 <a href="#metodos">Métodos de Trabajo</a>
                 <a href="#ejercicios">Ejercicios</a>
@@ -72,7 +74,8 @@
             <div class="badge-animated">
                 <span class="pulse-dot"></span> DISPONIBILIDAD DE CUPOS LIMITADA
             </div>
-            <h1>CONSTRUÍ TU <span class="highlight">MEJOR VERSIÓN</span></h1>
+            <h1>ENTRENA<span class="highlight">CONSEBA</span></h1>
+            <h2>CONSTRUÍ TU MEJOR VERSIÓN</h2>
             <p>Entrenamiento personalizado para ganar masa muscular, perder grasa y mejorar tu rendimiento físico con un plan 100% a tu medida.</p>
             
             <div class="hero-actions">
@@ -159,7 +162,7 @@
         <p class="search-desc">Ingresá tu nombre para consultar tu rutina semanal activa</p>
 
         <div class="search-box">
-            <input type="text" id="student-name-input" placeholder="Ingresá tu ID o DNI (ej: 1001)...">
+            <input type="text" id="student-name-input" placeholder="Ingresá tu DNI">
             <button id="search-btn" class="btn-primary">
                 <i class="fa-solid fa-magnifying-glass"></i> BUSCAR
             </button>
@@ -171,7 +174,7 @@
 
     <!-- SECCIÓN PLANES -->
 <section class="section-container" id="planes">
-    <!-- Encabezado con Barrita Verde -->
+    <!-- Encabezado con Barrita Naranja -->
     <div class="section-title-accent">
         <h2>PLANES DISPONIBLES</h2>
         <div class="accent-bar"></div>
@@ -179,46 +182,105 @@
     <p class="section-subtitle">Elegí la modalidad que mejor se adapte a tus objetivos</p>
 
     <div class="planes-grid">
-        <!-- PLAN 1: ASESORÍA ONLINE -->
-        <div class="plan-card">
+        <!-- PLAN 1: PRESENCIAL PREMIUM (10% OFF, DESTACADO) -->
+        <div class="plan-card featured">
+            <div class="badge-recommended">10% OFF</div>
+
             <div class="plan-header">
-                <span class="plan-type">100% DISTANCIA</span>
-                <h3 class="plan-title">ASESORÍA ONLINE</h3>
+                <span class="plan-type">PRESENCIAL</span>
+                <h3 class="plan-title">PRESENCIAL PREMIUM</h3>
             </div>
-            
+
             <div class="plan-price">
-                <span class="price">$60.000</span>
-                <span class="period">/ mes</span>
+                <div class="price-wrap">
+                    <span class="old-price">$66.667</span>
+                    <div class="price-row">
+                        <span class="price">$60.000</span>
+                        <span class="period">/ mes</span>
+                    </div>
+                </div>
             </div>
 
             <ul class="plan-features">
-                <li><i class="fa-solid fa-circle-check"></i> Rutina 100% personalizada</li>
-                <li><i class="fa-solid fa-circle-check"></i> Seguimiento semanal por WhatsApp</li>
-                <li><i class="fa-solid fa-circle-check"></i> Corrección técnica por video</li>
                 <li><i class="fa-solid fa-circle-check"></i> Acceso a la plataforma de alumnos</li>
+                <li><i class="fa-solid fa-circle-check"></i> Correcciones presenciales</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ayuda activa por WhatsApp</li>
+                <li><i class="fa-solid fa-circle-check"></i> Rutina 100% personalizada</li>
             </ul>
 
-            <!-- Opción A: Link directo a Mercado Pago -->
-            <!-- Opción B: Link a WhatsApp con mensaje automático -->
-            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20sumarme%20al%20plan%20de%20Asesor%C3%ADa%20Online" 
-               target="_blank" 
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20sumarme%20al%20plan%20Presencial%20Premium"
+               target="_blank"
+               class="btn-plan btn-filled">
+                <i class="fa-brands fa-whatsapp"></i> PAGAR Y EMPEZAR
+            </a>
+        </div>
+
+        <!-- PLAN 2: VIRTUAL PREMIUM -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <span class="plan-type">100% VIRTUAL</span>
+                <h3 class="plan-title">VIRTUAL PREMIUM</h3>
+            </div>
+
+            <div class="plan-price">
+                <div class="price-row">
+                    <span class="price">$45.000</span>
+                    <span class="period">/ mes</span>
+                </div>
+            </div>
+
+            <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i> Acceso a la plataforma de alumnos</li>
+                <li><i class="fa-solid fa-circle-check"></i> Correcciones por videollamada</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ayuda activa por WhatsApp</li>
+                <li><i class="fa-solid fa-circle-check"></i> Rutina 100% personalizada</li>
+            </ul>
+
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20sumarme%20al%20plan%20Virtual%20Premium"
+               target="_blank"
                class="btn-plan btn-outline">
                 PAGAR Y EMPEZAR
             </a>
         </div>
 
-        <!-- PLAN 2: PRESENCIAL (DESTACADO) -->
-        <div class="plan-card featured">
-            <div class="badge-recommended">RECOMENDADO</div>
-            
+        <!-- PLAN 3: ACCESO APP -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <span class="plan-type">100% VIRTUAL</span>
+                <h3 class="plan-title">ACCESO APP</h3>
+            </div>
+
+            <div class="plan-price">
+                <div class="price-row">
+                    <span class="price">$30.000</span>
+                    <span class="period">/ mes</span>
+                </div>
+            </div>
+
+            <ul class="plan-features">
+                <li><i class="fa-solid fa-circle-check"></i> Acceso a la app</li>
+                <li><i class="fa-solid fa-circle-check"></i> Rutina personalizada</li>
+            </ul>
+
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20sumarme%20al%20plan%20Acceso%20App"
+               target="_blank"
+               class="btn-plan btn-outline">
+                PAGAR Y EMPEZAR
+            </a>
+        </div>
+
+        <!-- PLAN 4: PRESENCIAL 1 A 1 -->
+        <div class="plan-card">
             <div class="plan-header">
                 <span class="plan-type">PERSONALIZADO</span>
                 <h3 class="plan-title">PRESENCIAL 1 A 1</h3>
             </div>
 
             <div class="plan-price">
-                <span class="price">$15.000</span>
-                <span class="period">/ clase</span>
+                <div class="price-row">
+                    <span class="price">$15.000</span>
+                    <span class="period">/ clase</span>
+                </div>
             </div>
 
             <ul class="plan-features">
@@ -228,10 +290,10 @@
                 <li><i class="fa-solid fa-circle-check"></i> Ajustes de carga en tiempo real</li>
             </ul>
 
-            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20agendar%20una%20clase%20Presencial%201%20a%201" 
-               target="_blank" 
-               class="btn-plan btn-filled">
-                <i class="fa-brands fa-whatsapp"></i> AGENDAR CLASE
+            <a href="https://wa.me/5491112345678?text=Hola%20Seba,%20quiero%20agendar%20una%20clase%20Presencial%201%20a%201"
+               target="_blank"
+               class="btn-plan btn-outline">
+                AGENDAR CLASE
             </a>
         </div>
     </div>

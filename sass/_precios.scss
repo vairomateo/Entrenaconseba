@@ -97,9 +97,9 @@
 /* GRID DE PLANES DETALLADOS */
 .planes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -108,7 +108,7 @@
   background-color: #121317;
   border: 1px solid #22242c;
   border-radius: 16px;
-  padding: 35px 28px;
+  padding: 30px 22px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -146,7 +146,7 @@
 .plan-type {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #60a5fa;
+  color: #FF6B00;
   letter-spacing: 1px;
   display: block;
   margin-bottom: 5px;
@@ -167,6 +167,25 @@
   margin-bottom: 25px;
   padding-bottom: 20px;
   border-bottom: 1px solid #22242c;
+
+  .price-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: #6b6b76;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
 
   .price {
     font-family: 'Montserrat', sans-serif;

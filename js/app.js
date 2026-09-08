@@ -77,7 +77,7 @@ const exercises = [
         category: "pecho",
         muscle: "Pectoral interno, tríceps",
         desc: "Codos pegados al cuerpo, controla la extensión",
-        videoUrl: "https://www.youtube.com/watch?v=Ejemplo2"
+        videoUrl: "https://www.youtube.com/watch?v=NO3fnbQr5nk&t=2s"
     },
     {
         title: "Aperturas con mancuernas",
