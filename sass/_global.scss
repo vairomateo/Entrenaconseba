@@ -51,7 +51,7 @@ section,
   .accent-bar {
     width: 50px;
     height: 4px;
-    background-color: var(--color-green);
+    background-color: var(--color-primary);
     margin: 10px auto 0;
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
@@ -203,7 +203,7 @@ section,
     width: 20px;
     height: 20px;
     border: 3px solid rgba(255, 255, 255, 0.12);
-    border-top-color: var(--color-green);
+    border-top-color: var(--color-primary);
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
   }
@@ -211,6 +211,50 @@ section,
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* BOTÓN DE DESCARGA DE RUTINA EN PDF */
+.btn-download-pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF6B00;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  i {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    background-color: #D95B00;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .spinner.spinner-dark {
+    width: 16px;
+    height: 16px;
+    border: 2.5px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #121214;
+    display: inline-block;
+  }
 }
 
 /* ANIMACIÓN SCROLL REVEAL */

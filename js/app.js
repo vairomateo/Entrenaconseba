@@ -478,7 +478,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 html += `</div>`;
+                html += `
+                    <button type="button" id="downloadPdfBtn" class="btn-download-pdf">
+                        <i class="fa-solid fa-file-pdf"></i> Descargar rutina en PDF
+                    </button>
+                `;
                 routineOutput.innerHTML = html;
+
+                const downloadBtn = document.getElementById('downloadPdfBtn');
+                if (downloadBtn) {
+                    downloadBtn.addEventListener('click', () => {
+                        if (typeof generateRoutinePDF !== 'function') {
+                            console.error('No se pudo cargar el generador de PDF.');
+                            return;
+                        }
+                        const originalLabel = downloadBtn.innerHTML;
+                        downloadBtn.disabled = true;
+                        downloadBtn.innerHTML = '<span class="spinner spinner-dark"></span> Generando PDF...';
+                        // Pequeño delay para que el spinner se vea, ya que la generación es casi instantánea
+                        setTimeout(() => {
+                            try {
+                                generateRoutinePDF(student);
+                            } catch (err) {
+                                console.error('Error generando el PDF:', err);
+                            } finally {
+                                downloadBtn.disabled = false;
+                                downloadBtn.innerHTML = originalLabel;
+                            }
+                        }, 300);
+                    });
+                }
             } else {
                 routineOutput.innerHTML = `
                     <h4 style="color: #ff4d4d; margin-bottom: 5px;">ID / Alumno no encontrado</h4>
