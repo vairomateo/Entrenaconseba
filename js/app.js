@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) {
         searchBtn.addEventListener('click', searchRoutine);
     }
-
+s
     if (nameInput) {
         nameInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') searchRoutine();
