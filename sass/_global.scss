@@ -17,6 +17,7 @@ section,
   padding: 60px 20px;
   max-width: 1100px;
   margin: 0 auto;
+  scroll-margin-top: 90px; // compensa el navbar fijo (~76px) al saltar por ancla
 }
 
 .section-title {
@@ -54,7 +55,7 @@ section,
     background-color: var(--color-primary);
     margin: 10px auto 0;
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+    box-shadow: 0 0 10px rgba(134, 137, 93, 0.5);
   }
 
   &.align-left {
@@ -76,7 +77,7 @@ section,
 
 .btn-primary {
   display: inline-block;
-  background-color: #FF6B00;
+  background-color: #86895D;
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 8px;
@@ -88,7 +89,7 @@ section,
   cursor: pointer;
 
   &:hover {
-    background-color: #D95B00;
+    background-color: #54582F;
     transform: translateY(-2px);
   }
 
@@ -98,7 +99,7 @@ section,
     transform: none;
 
     &:hover {
-      background-color: #FF6B00;
+      background-color: #86895D;
       transform: none;
     }
   }
@@ -107,8 +108,8 @@ section,
 .btn-secondary {
   display: inline-block;
   background-color: transparent;
-  color: #FF6B00;
-  border: 2px solid #FF6B00;
+  color: #86895D;
+  border: 2px solid #86895D;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -116,7 +117,7 @@ section,
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #FF6B00;
+    background-color: #86895D;
     color: #ffffff;
   }
 }
@@ -159,7 +160,7 @@ section,
 
       &:focus {
         outline: none;
-        border-color: #FF6B00;
+        border-color: #86895D;
       }
     }
 
@@ -224,7 +225,7 @@ section,
   padding: 14px;
   border: none;
   border-radius: 8px;
-  background-color: #FF6B00;
+  background-color: #86895D;
   color: #ffffff;
   font-weight: 800;
   font-size: 0.9rem;
@@ -238,7 +239,7 @@ section,
   }
 
   &:hover {
-    background-color: #D95B00;
+    background-color: #54582F;
     transform: translateY(-2px);
   }
 

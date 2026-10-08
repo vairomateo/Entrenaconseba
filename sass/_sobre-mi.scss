@@ -40,9 +40,9 @@
     .fe-quote {
       margin-top: 20px;
       font-style: italic;
-      color: #FF6B00;
+      color: #86895D;
       font-weight: 600;
-      border-left: 3px solid #FF6B00;
+      border-left: 3px solid #86895D;
       padding-left: 15px;
     }
   }
@@ -95,7 +95,7 @@
   right: 20px;
   background: rgba(18, 19, 23, 0.85);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 107, 0, 0.3);
+  border: 1px solid rgba(134, 137, 93, 0.3);
   padding: 12px 18px;
   border-radius: 12px;
   display: flex;
@@ -106,7 +106,7 @@
   font-size: 0.9rem;
 
   i {
-    color: #FF6B00;
+    color: #86895D;
     font-size: 1.2rem;
   }
 }
@@ -126,7 +126,7 @@
   margin-bottom: 16px;
 
   strong {
-    color: #FF6B00;
+    color: #86895D;
     font-weight: 600;
   }
 }
@@ -149,12 +149,12 @@
   transition: border-color 0.25s ease;
 
   &:hover {
-    border-color: rgba(255, 107, 0, 0.3);
+    border-color: rgba(134, 137, 93, 0.3);
   }
 
   .pillar-icon {
-    background-color: rgba(255, 107, 0, 0.1);
-    color: #FF6B00;
+    background-color: rgba(134, 137, 93, 0.1);
+    color: #86895D;
     width: 38px;
     height: 38px;
     border-radius: 8px;
@@ -183,8 +183,8 @@
 .about-quote {
   margin-top: 25px;
   padding: 15px 20px;
-  border-left: 3px solid #FF6B00;
-  background-color: rgba(255, 107, 0, 0.05);
+  border-left: 3px solid #86895D;
+  background-color: rgba(134, 137, 93, 0.05);
   color: #9ca3af;
   font-style: italic;
   font-size: 0.92rem;

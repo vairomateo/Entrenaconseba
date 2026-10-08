@@ -22,7 +22,7 @@
     }
 
     .author {
-      color: #FF6B00;
+      color: #86895D;
       font-weight: 700;
       font-size: 0.9rem;
     }
@@ -50,13 +50,13 @@
 
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 107, 0, 0.4);
+    border-color: rgba(134, 137, 93, 0.4);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   }
 }
 
 .review-stars {
-  color: #FF6B00;
+  color: #86895D;
   font-size: 0.85rem;
   display: flex;
   gap: 4px;
@@ -84,7 +84,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FF6B00 0%, #D95B00 100%);
+  background: linear-gradient(135deg, #86895D 0%, #54582F 100%);
   color: #000000;
   font-weight: 800;
   font-size: 0.9rem;

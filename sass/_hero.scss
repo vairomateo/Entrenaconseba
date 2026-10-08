@@ -35,9 +35,9 @@
     padding-right: 20px;
 
     .badge {
-      background-color: rgba(255, 107, 0, 0.15);
-      color: #FF6B00;
-      border: 1px solid rgba(255, 107, 0, 0.3);
+      background-color: rgba(134, 137, 93, 0.15);
+      color: #86895D;
+      border: 1px solid rgba(134, 137, 93, 0.3);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.8rem;
@@ -54,7 +54,7 @@
       text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 
       .highlight {
-        color: #FF6B00;
+        color: #86895D;
       }
 
       @media (max-width: 768px) {
@@ -108,9 +108,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 107, 0, 0.1);
-  border: 1px solid rgba(255, 107, 0, 0.3);
-  color: #FF6B00;
+  background: rgba(134, 137, 93, 0.1);
+  border: 1px solid rgba(134, 137, 93, 0.3);
+  color: #86895D;
   padding: 6px 14px;
   border-radius: 50px;
   font-size: 0.8rem;
@@ -120,9 +120,9 @@
   .pulse-dot {
     width: 8px;
     height: 8px;
-    background-color: #FF6B00;
+    background-color: #86895D;
     border-radius: 50%;
-    box-shadow: 0 0 10px #FF6B00;
+    box-shadow: 0 0 10px #86895D;
     animation: pulse 1.5s infinite;
   }
 }

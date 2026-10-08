@@ -1,0 +1,111 @@
+/* MÉTODO VIDA */
+.metodo-vida-intro {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+
+  .metodo-vida-tagline {
+    color: #86895D;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .metodo-vida-text {
+    color: #a8a8b3;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+}
+
+.vision-block {
+  max-width: 820px;
+  margin: 0 auto;
+  background-color: #202024;
+  border: 1px solid #29292e;
+  border-radius: 16px;
+  padding: 45px 40px;
+
+  @media (max-width: 600px) {
+    padding: 32px 24px;
+  }
+
+  h3 {
+    color: #86895D;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .vision-lead {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .vision-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+
+    li {
+      position: relative;
+      color: #d4d4db;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left: 22px;
+      margin-bottom: 14px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #BEC092;
+      }
+    }
+  }
+
+  .vision-closing {
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.5;
+    padding-top: 26px;
+    margin-top: 10px;
+    border-top: 1px solid #29292e;
+  }
+
+  .vision-signature {
+    text-align: center;
+    margin-top: 24px;
+
+    .brand-name {
+      display: block;
+      color: #86895D;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .brand-tagline {
+      display: block;
+      color: #BEC092;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+  }
+}

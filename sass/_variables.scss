@@ -1,9 +1,11 @@
 // ==========================================
 // 1. SCSS Variables
 // ==========================================
-$primary-color:    #FF6B00;
-$primary-hover:    #D95B00;
-$color-orange:     #FF6B00;
+$primary-color:    #86895D;
+$primary-hover:    #54582F;
+$color-orange:     #86895D;
+$color-olive-dark: #54582F;
+$color-olive-light:#BEC092;
 $color-white:      #ffffff; // <-- Agregada para solucionar el error
 
 $bg-main:          #121214;
@@ -32,6 +34,8 @@ $transition:       all 0.3s ease;
   --bg-card-hover:  #1a1b20;
   --color-primary:   #{$primary-color};
   --color-orange:    #{$color-orange};
+  --color-olive-dark: #{$color-olive-dark};
+  --color-olive-light:#{$color-olive-light};
   --color-white:     #{$color-white};
   --color-muted:     #{$text-gray};
   --border-color:    #{$border-color-alt};
