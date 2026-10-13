@@ -71,28 +71,38 @@
   margin-bottom: 40px;
 
   .pill {
-    background-color: #1e1f25;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #9ca3af;
+    position: relative;
+    background-color: rgba(190, 192, 146, 0.07);
+    border: 1px solid rgba(190, 192, 146, 0.28);
+    color: #d6d8bc;
     padding: 10px 24px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
+    letter-spacing: 0.3px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease,
+                border-color 0.25s ease, box-shadow 0.25s ease;
     outline: none;
 
     &:hover {
-      background-color: #2a2b33;
+      background-color: rgba(134, 137, 93, 0.22);
+      border-color: #86895D;
       color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(190, 192, 146, 0.35);
     }
 
     &.active {
-      background-color: var(--color-primary);
-      color: #000000;
+      background: linear-gradient(135deg, #BEC092 0%, #86895D 100%);
+      color: #14150b;
       font-weight: 800;
-      border-color: var(--color-primary);
-      box-shadow: 0 0 15px rgba(134, 137, 93, 0.3);
+      border-color: transparent;
+      box-shadow: 0 6px 18px rgba(134, 137, 93, 0.45);
+      animation: pillPop 0.35s ease;
     }
   }
 }

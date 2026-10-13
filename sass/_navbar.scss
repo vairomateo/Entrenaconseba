@@ -36,14 +36,33 @@
       align-items: center;
 
       a {
+        position: relative;
         color: #a8a8b3;
         text-decoration: none;
         font-weight: 600;
         font-size: 0.95rem;
         transition: all 0.3s ease;
 
+        // Subrayado que crece desde el centro
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -6px;
+          width: 0;
+          height: 2px;
+          border-radius: 2px;
+          background: linear-gradient(90deg, #86895D, #BEC092);
+          transition: width 0.3s ease, left 0.3s ease;
+        }
+
         &:hover {
-          color: #86895D;
+          color: #BEC092;
+
+          &::after {
+            width: 100%;
+            left: 0;
+          }
         }
       }
 
@@ -69,6 +88,10 @@
           padding: 14px 0;
           border-bottom: 1px solid #232328;
           font-size: 1rem;
+
+          &::after {
+            display: none;
+          }
         }
 
         &.is-open {
@@ -78,26 +101,67 @@
     }
 
     .nav-cta {
-      background-color: #86895D;
-      color: #ffffff;
-      padding: 8px 16px;
-      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #BEC092 0%, #86895D 100%);
+      color: #14150b;
+      padding: 9px 20px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       white-space: nowrap;
+      animation: ctaGlow 3.2s ease-in-out infinite;
+
+      i {
+        font-size: 1.05rem;
+        transition: transform 0.3s ease;
+      }
+
+      // Brillo que cruza el botón al pasar el mouse
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -80%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+      }
 
       &:hover {
-        background-color: #54582F;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(134, 137, 93, 0.55);
+
+        i {
+          transform: rotate(-12deg) scale(1.15);
+        }
+
+        &::after {
+          left: 130%;
+        }
       }
 
       @media (max-width: 480px) {
         span {
           display: none;
         }
-        padding: 8px 10px;
-        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+
+        i {
+          font-size: 1.2rem;
+        }
       }
     }
 

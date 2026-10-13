@@ -1,0 +1,142 @@
+/* ==========================================
+   ANIMACIONES SUTILES (solo estéticas)
+   ========================================== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dotPop {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmerText {
+  to { background-position: 200% center; }
+}
+
+@keyframes ringSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 4px 14px rgba(134, 137, 93, 0.35), 0 0 0 0 rgba(190, 192, 146, 0); }
+  50%      { box-shadow: 0 4px 18px rgba(134, 137, 93, 0.5),  0 0 0 6px rgba(190, 192, 146, 0.12); }
+}
+
+@keyframes pillPop {
+  0%   { transform: scale(0.92); }
+  60%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pillIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrada escalonada del hero al cargar la página */
+.hero .hero-content > * {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@for $i from 1 through 5 {
+  .hero .hero-content > *:nth-child(#{$i}) {
+    animation-delay: #{0.1 + ($i - 1) * 0.12}s;
+  }
+}
+
+/* Contenedores que animan sus hijos de a uno (el contenedor solo hace fade) */
+.reveal.reveal-stagger {
+  transform: none;
+}
+
+.reveal-stagger.active > * {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@for $i from 1 through 6 {
+  .reveal-stagger.active > *:nth-child(#{$i}) {
+    animation-delay: #{($i - 1) * 0.1}s;
+  }
+}
+
+/* Pills de músculos: aparecen una tras otra */
+.filter-pills.active .pill {
+  animation: pillIn 0.5s ease backwards;
+}
+
+@for $i from 1 through 8 {
+  .filter-pills.active .pill:nth-child(#{$i}) {
+    animation-delay: #{0.05 + ($i - 1) * 0.06}s;
+  }
+}
+
+/* La barrita de los títulos se dibuja al aparecer */
+.section-title-accent.reveal .accent-bar {
+  width: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.section-title-accent.reveal.active .accent-bar {
+  width: 50px;
+}
+
+/* Botón principal: brillo al pasar el mouse + ícono que se mueve */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+
+  i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+  }
+
+  &:hover {
+    i { transform: rotate(-12deg) scale(1.2); }
+    &::after { left: 130%; }
+  }
+}
+
+/* Respeta a quienes tienen activado "reducir movimiento" en su dispositivo */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .section-title-accent.reveal .accent-bar {
+    width: 50px;
+  }
+
+  .vision-block::before {
+    transform: scaleX(1);
+  }
+}

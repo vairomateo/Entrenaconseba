@@ -10,6 +10,13 @@
     font-size: 1.05rem;
     letter-spacing: 1px;
     margin-bottom: 16px;
+    // Brillo suave que recorre el texto
+    background: linear-gradient(90deg, #86895D 0%, #BEC092 25%, #86895D 50%, #BEC092 75%, #86895D 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerText 6s linear infinite;
   }
 
   .metodo-vida-text {
@@ -20,6 +27,8 @@
 }
 
 .vision-block {
+  position: relative;
+  overflow: hidden;
   max-width: 820px;
   margin: 0 auto;
   background-color: #202024;
@@ -62,6 +71,8 @@
       padding-left: 22px;
       margin-bottom: 14px;
 
+      transition: transform 0.25s ease, color 0.25s ease;
+
       &::before {
         content: '';
         position: absolute;
@@ -71,8 +82,64 @@
         height: 8px;
         border-radius: 50%;
         background-color: #BEC092;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      &:hover {
+        transform: translateX(6px);
+        color: #ffffff;
+
+        &::before {
+          transform: scale(1.4);
+          box-shadow: 0 0 10px rgba(190, 192, 146, 0.7);
+        }
       }
     }
+  }
+
+  // Línea superior que se dibuja desde el centro al aparecer
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #86895D, #BEC092, #86895D, transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  }
+
+  &.active::before {
+    transform: scaleX(1);
+  }
+
+  // Entrada escalonada de cada frase al aparecer en pantalla
+  &.active .vision-list li {
+    animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+
+    &::before {
+      animation: dotPop 0.5s ease backwards;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &.active .vision-list li:nth-child(#{$i}) {
+      animation-delay: #{0.35 + ($i - 1) * 0.1}s;
+
+      &::before {
+        animation-delay: #{0.45 + ($i - 1) * 0.1}s;
+      }
+    }
+  }
+
+  &.active .vision-closing {
+    animation: fadeUp 0.7s ease 1.15s backwards;
+  }
+
+  &.active .vision-signature {
+    animation: fadeUp 0.7s ease 1.35s backwards;
   }
 
   .vision-closing {
